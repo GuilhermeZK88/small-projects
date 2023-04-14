@@ -28,16 +28,17 @@ def Processing_this_data(string):
                     #se depois de um ')', é no meio do telefone
                     if this_data[letter_counter - i] == ')':
                         letter = ''
-                        break
+                        
                     #se antecede uma palavra em caps, então partido com 2 nomes
                     elif this_data[letter_counter + 2].isupper():
                         letter = ' '
-                        break
-
-                    #se não precedido por ')' ou 4 numb, não é o fim
-                    letter = ','
-                    precededby4numb = False
+                    
+                    #se não precedido por ')' ou 4 numb, é entredados de um dep
+                    else:                      
+                        letter = ','
+                        
                     break
+                    
             #estamos depois de 4 numb? fim do deputado
             if precededby4numb:
                 letter = '\n'
